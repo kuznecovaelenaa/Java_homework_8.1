@@ -20,19 +20,19 @@ public class Radio {
     }
 
     public void next() {
-        if (numberListened < 9) {
-            numberListened = numberListened + 1;
-        } else if (numberListened == 9) {
+        if (numberListened == 9) {
             numberListened = 0;
+        } else {
+            numberListened = numberListened + 1;
         }
         setNumberListened(numberListened);
     }
 
     public void prev() {
-        if (numberListened <= 9 && numberListened > 0) {
-            numberListened = numberListened - 1;
-        } else if (numberListened == 0) {
+        if (numberListened == 0) {
             numberListened = 9;
+        } else {
+            numberListened = numberListened - 1;
         }
         setNumberListened(numberListened);
     }
@@ -52,19 +52,19 @@ public class Radio {
     }
 
     public void increaseVolume() {
-        if (soundVolume < 10) {
-            soundVolume = soundVolume + 1;
-        } else if (soundVolume == 10) {
+        if (soundVolume == 10) {
             soundVolume = 0;
+        } else {
+            soundVolume = soundVolume + 1;
         }
         setNumberListened(soundVolume);
     }
 
     public void reduceVolume() {
-        if (soundVolume <= 10 && soundVolume > 0) {
-            soundVolume = soundVolume - 1;
-        } else if (soundVolume == 0) {
+        if (soundVolume == 0) {
             soundVolume = 10;
+        } else {
+            soundVolume = soundVolume - 1;
         }
         setNumberListened(soundVolume);
     }
