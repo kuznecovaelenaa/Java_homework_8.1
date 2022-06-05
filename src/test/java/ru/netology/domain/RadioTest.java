@@ -9,7 +9,7 @@ public class RadioTest {
 
 
     @Test
-    public void shouldMinMaxNumberListenedAndCountStation() {
+    void shouldMinMaxNumberListenedAndCountStation() {
 
         Radio radio = new Radio(10, 0, 9);
         assertEquals(10, radio.getCountStation());
@@ -18,28 +18,28 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldSetNumberListened() {
+    void shouldSetNumberListened() {
 
         radio.setNumberListened(5);
         assertEquals(5, radio.getNumberListened());
     }
 
     @Test
-    public void shouldSetNoValidNumberListened() {
+    void shouldSetNoValidNumberListened() {
 
         radio.setNumberListened(10);
         assertEquals(0, radio.getNumberListened());
     }
 
     @Test
-    public void shouldSetNotValidNumberListened() {
+    void shouldSetNotValidNumberListened() {
 
         radio.setNumberListened(-1);
         assertEquals(0, radio.getNumberListened());
     }
 
     @Test
-    public void shouldNextNumberListened() {
+    void shouldNextNumberListened() {
 
         radio.setNumberListened(5);
         radio.next();
@@ -47,7 +47,7 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldNextLastNumberListened() {
+    void shouldNextLastNumberListened() {
 
         radio.setNumberListened(9);
         radio.next();
@@ -55,7 +55,7 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldPrevNumberListened() {
+    void shouldPrevNumberListened() {
 
         radio.setNumberListened(7);
         radio.prev();
@@ -63,7 +63,7 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldPrevFirstNumberListened() {
+    void shouldPrevFirstNumberListened() {
 
         radio.setNumberListened(0);
         radio.prev();
@@ -72,7 +72,7 @@ public class RadioTest {
 
 
     @Test
-    public void shouldMinMaxSoundVolume() {
+    void shouldMinMaxSoundVolume() {
 
         Radio radio = new Radio(0, 100);
         assertEquals(100, radio.getMaxSoundVolume());
@@ -80,28 +80,28 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldSetSoundVolume() {
+    void shouldSetSoundVolume() {
 
         radio.setSoundVolume(50);
         assertEquals(50, radio.getSoundVolume());
     }
 
     @Test
-    public void shouldSetNoValidSoundVolume() {
+    void shouldSetNoValidSoundVolume() {
 
         radio.setSoundVolume(-1);
         assertEquals(0, radio.getSoundVolume());
     }
 
     @Test
-    public void shouldSetNotValidSoundVolume() {
+    void shouldSetNotValidSoundVolume() {
 
         radio.setSoundVolume(101);
         assertEquals(0, radio.getSoundVolume());
     }
 
     @Test
-    public void shouldIncreaseVolumeSoundVolume() {
+    void shouldIncreaseVolumeSoundVolume() {
 
         radio.setSoundVolume(51);
         radio.increaseVolume();
@@ -109,7 +109,7 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldIncreaseVolumeLastSoundVolume() {
+    void shouldIncreaseVolumeLastSoundVolume() {
 
         radio.setSoundVolume(100);
         radio.increaseVolume();
@@ -117,7 +117,7 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldReduceVolumeSoundVolume() {
+    void shouldReduceVolumeSoundVolume() {
 
         radio.setSoundVolume(57);
         radio.reduceVolume();
@@ -125,7 +125,7 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldReduceVolumeFirstSoundVolume() {
+    void shouldReduceVolumeFirstSoundVolume() {
 
         radio.setSoundVolume(0);
         radio.reduceVolume();
