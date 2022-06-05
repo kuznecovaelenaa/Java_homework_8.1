@@ -1,24 +1,22 @@
 package ru.netology.domain;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class Radio {
 
     private int countStation = 10;
     private int minNumberListened;
     private int maxNumberListened = countStation - 1;
     private int numberListened;
+    private int minSoundVolume;
+    private int maxSoundVolume = 100;
+    private int soundVolume;
 
-
-
-    public Radio() {
-
-    }
-
-    public Radio(int countStation, int minNumberListened, int maxNumberListened) {
-        this.countStation = countStation;
-        this.maxNumberListened = countStation - 1;
-        this.minNumberListened = minNumberListened;
-
-    }
 
     void setNumberListened(int numberListened) {
         if (numberListened < minNumberListened) {
@@ -48,31 +46,6 @@ public class Radio {
         setNumberListened(numberListened);
     }
 
-    public int getNumberListened() {
-        return numberListened;
-    }
-
-    public int getMinNumberListened() {
-        return minNumberListened;
-    }
-
-    public int getMaxNumberListened() {
-        return maxNumberListened;
-    }
-
-    public int getCountStation() {
-        return countStation;
-    }
-
-    private int minSoundVolume;
-    private int maxSoundVolume = 100;
-    private int soundVolume;
-
-    public Radio(int minSoundVolume, int maxSoundVolume) {
-        this.minSoundVolume = minSoundVolume;
-        this.maxSoundVolume = maxSoundVolume;
-    }
-
     void setSoundVolume(int soundVolume) {
         if (soundVolume < minSoundVolume) {
             return;
@@ -81,10 +54,6 @@ public class Radio {
             return;
         }
         this.soundVolume = soundVolume;
-    }
-
-    public int getSoundVolume() {
-        return soundVolume;
     }
 
     public void increaseVolume() {
@@ -103,14 +72,6 @@ public class Radio {
             soundVolume = soundVolume - 1;
         }
         setSoundVolume(soundVolume);
-    }
-
-    public int getMinSoundVolume() {
-        return minSoundVolume;
-    }
-
-    public int getMaxSoundVolume() {
-        return maxSoundVolume;
     }
 }
 
