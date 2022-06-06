@@ -6,17 +6,17 @@ public class Radio {
     private int minNumberListened;
     private int maxNumberListened = countStation - 1;
     private int numberListened;
+    private int minSoundVolume;
+    private int maxSoundVolume = 100;
+    private int soundVolume;
 
 
     public Radio() {
 
     }
 
-    public Radio(int countStation, int minNumberListened, int maxNumberListened) {
+    public Radio(int countStation) {
         this.countStation = countStation;
-        this.maxNumberListened = countStation - 1;
-        this.minNumberListened = minNumberListened;
-
     }
 
     void setNumberListened(int numberListened) {
@@ -45,31 +45,6 @@ public class Radio {
             numberListened = numberListened - 1;
         }
         setNumberListened(numberListened);
-    }
-
-    public int getNumberListened() {
-        return numberListened;
-    }
-
-    public int getMinNumberListened() {
-        return minNumberListened;
-    }
-
-    public int getMaxNumberListened() {
-        return maxNumberListened;
-    }
-
-    public int getCountStation() {
-        return countStation;
-    }
-
-    private int minSoundVolume;
-    private int maxSoundVolume = 100;
-    private int soundVolume;
-
-    public Radio(int minSoundVolume, int maxSoundVolume) {
-        this.minSoundVolume = minSoundVolume;
-        this.maxSoundVolume = maxSoundVolume;
     }
 
     void setSoundVolume(int soundVolume) {
@@ -104,12 +79,45 @@ public class Radio {
         setSoundVolume(soundVolume);
     }
 
+    public int getCountStation() {
+        return countStation;
+    }
+
+    public int getMinNumberListened() {
+        return minNumberListened;
+    }
+
+    public void setMinNumberListened(int minNumberListened) {
+        this.minNumberListened = minNumberListened;
+    }
+
+    public int getMaxNumberListened() {
+        return maxNumberListened;
+    }
+
+    public void setMaxNumberListened(int maxNumberListened) {
+        this.maxNumberListened = maxNumberListened;
+    }
+
+    public int getNumberListened() {
+        return numberListened;
+    }
+
     public int getMinSoundVolume() {
         return minSoundVolume;
+    }
+
+    public void setMinSoundVolume(int minSoundVolume) {
+        this.minSoundVolume = minSoundVolume;
     }
 
     public int getMaxSoundVolume() {
         return maxSoundVolume;
     }
+
+    public void setMaxSoundVolume(int maxSoundVolume) {
+        this.maxSoundVolume = maxSoundVolume;
+    }
 }
+
 

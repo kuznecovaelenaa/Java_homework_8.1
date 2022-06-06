@@ -9,11 +9,23 @@ public class RadioTest {
 
 
     @Test
-    void shouldMinMaxNumberListenedAndCountStation() {
+    void shouldCountStation() {
 
-        Radio radio = new Radio(10, 0, 9);
+        Radio radio = new Radio(10);
         assertEquals(10, radio.getCountStation());
+    }
+
+    @Test
+    void shouldMinNumberListened() {
+
+        radio.setMinNumberListened(0);
         assertEquals(0, radio.getMinNumberListened());
+    }
+
+    @Test
+    void shouldMaxNumberListened() {
+
+        radio.setMaxNumberListened(9);
         assertEquals(9, radio.getMaxNumberListened());
     }
 
@@ -72,11 +84,17 @@ public class RadioTest {
 
 
     @Test
-    void shouldMinMaxSoundVolume() {
+    void shouldMinSoundVolume() {
 
-        Radio radio = new Radio(0, 100);
-        assertEquals(100, radio.getMaxSoundVolume());
+        radio.setMinSoundVolume(0);
         assertEquals(0, radio.getMinSoundVolume());
+    }
+
+    @Test
+    void shouldMaxSoundVolume() {
+
+        radio.setMaxSoundVolume(100);
+        assertEquals(100, radio.getMaxSoundVolume());
     }
 
     @Test
