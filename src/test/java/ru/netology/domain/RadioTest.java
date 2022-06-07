@@ -1,8 +1,10 @@
 package ru.netology.domain;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 public class RadioTest {
     Radio radio = new Radio();
@@ -10,9 +12,12 @@ public class RadioTest {
 
     @Test
     void shouldCountStation() {
+        Radio radio = new Radio(20);
 
-        Radio radio = new Radio(10);
-        assertEquals(10, radio.getCountStation());
+        assertEquals(20, radio.getCountStation());
+        assertEquals(0, radio.getMinNumberListened());
+        assertEquals(20, radio.getMaxNumberListened());
+        assertEquals(14, radio.getNumberListened());
     }
 
     @Test
@@ -39,7 +44,7 @@ public class RadioTest {
     @Test
     void shouldSetNoValidNumberListened() {
 
-        radio.setNumberListened(10);
+        radio.setNumberListened(14);
         assertEquals(0, radio.getNumberListened());
     }
 

@@ -4,7 +4,7 @@ public class Radio {
 
     private int countStation = 10;
     private int minNumberListened;
-    private int maxNumberListened = countStation - 1;
+    private int maxNumberListened = 9;
     private int numberListened;
     private int minSoundVolume;
     private int maxSoundVolume = 100;
@@ -17,6 +17,8 @@ public class Radio {
 
     public Radio(int countStation) {
         this.countStation = countStation;
+        maxNumberListened = minNumberListened + countStation;
+        numberListened = 14;
     }
 
     void setNumberListened(int numberListened) {
