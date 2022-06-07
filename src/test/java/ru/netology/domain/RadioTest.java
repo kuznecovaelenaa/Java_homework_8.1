@@ -16,8 +16,12 @@ public class RadioTest {
 
         assertEquals(20, radio.getCountStation());
         assertEquals(0, radio.getMinNumberListened());
-        assertEquals(20, radio.getMaxNumberListened());
+        assertEquals(19, radio.getMaxNumberListened());
         assertEquals(14, radio.getNumberListened());
+
+        radio.setNumberListened(19);
+        radio.next();
+        assertEquals(0, radio.getNumberListened());
     }
 
     @Test
